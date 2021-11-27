@@ -1,1 +1,48 @@
-/* No CSS */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 600px;
+  height: 800px;
+}
+
+.calculator .display {
+  background-color: #333;
+  height: 70px;
+  width: 100%;
+  margin-top: 60px;
+  color: white;
+}
+
+.calculator .operations {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-area: 10px;
+  margin-top: 20px;
+}
+
+.calculator .operations .equals {
+  grid-column: 4/5;
+  grid-row: 2/6;
+  background-color: #3925eb !important;
+}
+
+.calculator .operations #ac {
+  background-color: red !important;
+  color: #fff;
+}
+
+.calculator .operations .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  border-radius: 5px;
+  background-color: lightgray;
+}
