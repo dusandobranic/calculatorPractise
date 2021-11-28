@@ -42,7 +42,13 @@ body {
             justify-content: center;
             margin: 8px;
             border-radius: 5px;
-            background-color: lightgray;   
+            background-color: lightgray;
+            border: 1px solid #333;   
+        }
+
+        .item:hover {
+            background-color: #fff;
+            border: 1px solid #333;
         }
     }
 }
