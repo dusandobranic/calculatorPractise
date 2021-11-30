@@ -18,6 +18,8 @@ body {
   width: 100%;
   margin-top: 60px;
   color: white;
+  font-size: 52px;
+  text-align: end;
 }
 
 .calculator .operations {
@@ -46,6 +48,9 @@ body {
   border-radius: 5px;
   background-color: lightgray;
   border: 1px solid #333;
+  font-size: 30px;
+  padding: 12px 0;
+  font-weight: 600;
 }
 
 .calculator .operations .item:hover {
