@@ -49,9 +49,7 @@ keys.forEach((key) => {
 });
 
 function updateDisplay() {
-  // select the element with class of `calculator-screen`
   const display = document.querySelector("#display");
-  // update the value of the element with the contents of `displayValue`
   display.value = calculator.displayValue;
 
   console.log(calculator.displayValue);
