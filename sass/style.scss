@@ -33,9 +33,17 @@ body {
       background-color: rgb(57, 37, 235) !important;
     }
 
+    .equals:hover {
+      background-color: lightblue !important;
+    }
+
     #ac {
-      background-color: red !important;
+      background-color: red;
       color: #fff;
+    }
+
+    #ac:hover {
+      background-color: #333;
     }
 
     .item {

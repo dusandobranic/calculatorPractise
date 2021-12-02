@@ -35,9 +35,17 @@ body {
   background-color: #3925eb !important;
 }
 
+.calculator .operations .equals:hover {
+  background-color: lightblue !important;
+}
+
 .calculator .operations #ac {
-  background-color: red !important;
+  background-color: red;
   color: #fff;
+}
+
+.calculator .operations #ac:hover {
+  background-color: #333;
 }
 
 .calculator .operations .item {
