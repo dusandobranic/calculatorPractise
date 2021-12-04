@@ -57,6 +57,12 @@ body {
       font-size: 30px;
       padding: 12px 0;
       font-weight: 600;
+      cursor: pointer;
+      -moz-user-select: -moz-none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+      user-select: none;
     }
 
     .item:hover {

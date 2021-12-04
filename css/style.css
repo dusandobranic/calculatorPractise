@@ -59,6 +59,9 @@ body {
   font-size: 30px;
   padding: 12px 0;
   font-weight: 600;
+  cursor: pointer;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .calculator .operations .item:hover {

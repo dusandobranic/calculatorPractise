@@ -8,6 +8,7 @@ const calculator = {
   firstOperand: null,
   waitingForSecondOperand: false,
   operator: null,
+  result: 0
 };
 
 for (var i = 0; i < divs.length; i++) {
@@ -35,7 +36,7 @@ keys.forEach((key) => {
       return;
     }
     if (target.classList.contains("equals")) {
-      console.log("equals", target.innerText);
+      equals();
       return;
     }
 
@@ -44,8 +45,31 @@ keys.forEach((key) => {
   });
 });
 
+function equals() {
+  const first = parseInt(calculator.firstOperand, 10);
+  const second = parseInt(calculator.displayValue, 10);
+  let res = calculator.result;
+  if (calculator.operator === "+") {
+    res = first + second;
+    calculator.displayValue = res;
+    updateDisplay();
+  } else if (calculator.operator === "-") {
+    res = first - second;
+    calculator.displayValue = res;
+    updateDisplay();
+  } else if (calculator.operator === "*") {
+    res = first * second;
+    calculator.displayValue = res;
+    updateDisplay();
+  } else if (calculator.operator === "/"){
+    res = first / second;
+    calculator.displayValue = res
+    updateDisplay();
+  }
+}
+
 function addDecimal(dot) {
-  if (calculator.displayValue.includes('.')) {
+  if (calculator.displayValue.includes(".")) {
     return;
   } else {
     calculator.displayValue = calculator.displayValue + dot;
@@ -78,13 +102,13 @@ function operatorClicked(operator) {
   actions = operator;
   switch (actions) {
     case "+":
-      calculator.operator = "+"
+      calculator.operator = "+";
       calculator.firstOperand = calculator.displayValue;
       clearDisplay();
       break;
     case "-":
       calculator.operator = "-";
-      firstOperand = calculator.displayValue;
+      calculator.firstOperand = calculator.displayValue;
       clearDisplay();
       break;
     case "*":
