@@ -8,8 +8,10 @@ const calculator = {
   firstOperand: null,
   waitingForSecondOperand: false,
   operator: null,
-  result: 0
+  result: 0,
 };
+
+let op = calculator.operator;
 
 for (var i = 0; i < divs.length; i++) {
   divs[i].classList.add("item");
@@ -23,6 +25,7 @@ keys.forEach((key) => {
 
     if (target.classList.contains("operator")) {
       operatorClicked(target.innerText);
+      op = target.innerText;
       return;
     }
 
@@ -36,7 +39,7 @@ keys.forEach((key) => {
       return;
     }
     if (target.classList.contains("equals")) {
-      equals();
+      equalsSwitch(op);
       return;
     }
 
@@ -45,26 +48,57 @@ keys.forEach((key) => {
   });
 });
 
-function equals() {
+// function equals() {
+//   const first = parseInt(calculator.firstOperand, 10);
+//   const second = parseInt(calculator.displayValue, 10);
+//   let res = calculator.result;
+//   if (calculator.operator === "+") {
+//     res = first + second;
+//     calculator.displayValue = res;
+//     updateDisplay();
+//   } else if (calculator.operator === "-") {
+//     res = first - second;
+//     calculator.displayValue = res;
+//     updateDisplay();
+//   } else if (calculator.operator === "*") {
+//     res = first * second;
+//     calculator.displayValue = res;
+//     updateDisplay();
+//   } else if (calculator.operator === "/") {
+//     res = first / second;
+//     calculator.displayValue = res;
+//     updateDisplay();
+//   }
+// }
+
+function equalsSwitch(op) {
   const first = parseInt(calculator.firstOperand, 10);
   const second = parseInt(calculator.displayValue, 10);
   let res = calculator.result;
-  if (calculator.operator === "+") {
-    res = first + second;
-    calculator.displayValue = res;
-    updateDisplay();
-  } else if (calculator.operator === "-") {
-    res = first - second;
-    calculator.displayValue = res;
-    updateDisplay();
-  } else if (calculator.operator === "*") {
-    res = first * second;
-    calculator.displayValue = res;
-    updateDisplay();
-  } else if (calculator.operator === "/"){
-    res = first / second;
-    calculator.displayValue = res
-    updateDisplay();
+  switch (op) {
+    case "+":
+      res = first + second;
+      calculator.displayValue = res;
+      updateDisplay();
+      break;
+    case "-":
+      res = first - second;
+      calculator.displayValue = res;
+      updateDisplay();
+      break;
+    case "*":
+      res = first * second;
+      calculator.displayValue = res;
+      updateDisplay();
+      break;
+    case "/":
+      res = first / second;
+      calculator.displayValue = res;
+      updateDisplay();
+      break;
+    default:
+      alert("Nije unet validan operator");
+      break;
   }
 }
 
